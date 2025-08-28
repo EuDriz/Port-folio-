@@ -1,0 +1,281 @@
+/* Define as variáveis de cor e fontes para todo o site. */
+:root {
+    --cor-fundo-escuro: #1b263b;
+    --cor-fundo-medio: #2a3b52;
+    --cor-texto: #c3d1e3;
+    --cor-destaque: #77a6b6;
+    --fonte-principal: 'Arial', sans-serif;
+}
+
+/* Reseta margens e paddings de todos os elementos para consistência. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Habilita o efeito de rolagem suave para links de âncora. */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos base do corpo da página, como fonte e cores de fundo/texto. */
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto);
+}
+
+/* Define a estrutura principal da página (menu, principal, rodapé) com Grid. */
+.container { 
+    display: grid; 
+    grid-template-rows: 10vh auto 15vh; 
+    grid-template-areas:   
+        "menu"
+        "principal"
+        "rodape"; 
+    grid-gap: 5px; 
+}
+
+/* Estiliza a barra de navegação */
+.menu {
+    grid-area: menu;
+    background-color: var(--cor-fundo-escuro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estiliza a lista de links dentro do menu. */
+.menu ul {
+    list-style: none;
+    display: flex;
+}
+
+/* Adiciona espaçamento entre os itens do menu. */
+.menu ul li {
+    margin: 20px;
+}
+
+/* Estiliza a aparência de cada link do menu. */
+.menu ul li a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+/* Efeito visual ao passar o mouse sobre um link do menu. */
+.menu ul li a:hover {
+    color: var(--cor-texto);
+    background-color: var(--cor-destaque);
+    padding: 5px;
+    border-radius: 8px;
+}
+
+/* Define a área de conteúdo principal da página. */
+.principal {
+    grid-area: principal;
+    padding: 40px 5%;
+}
+
+/* Estilo base para todas as seções (espaçamento e alinhamento). */
+section {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+/* Estiliza o título principal de cada seção. */
+section h2 {
+    font-size: 2.5rem;
+    color: var(--cor-destaque);
+    margin-bottom: 30px;
+    text-transform: capitalize;
+}
+
+/* Alinha os cards de formação lado a lado. */
+.formacao-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Estiliza a aparência de cada card de formação. */
+.formacao-item {
+    background-color: var(--cor-fundo-medio);
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    flex-basis: 350px;
+    flex-grow: 1;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column; 
+}
+
+/* Estiliza o título dentro dos cards de formação. */
+.formacao-item h3 {
+    color: var(--cor-destaque);
+    margin-bottom: 15px;
+    min-height: 55px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estiliza os parágrafos dentro dos cards de formação. */
+.formacao-item p {
+    text-align: left;
+    margin-top: 10px;
+}
+
+/* Cria uma grade responsiva para os cards de projeto. */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Estilo base do card de projeto, define o 'palco' da animação. */
+.projeto-card {
+    padding: 0;
+    background-color: var(--cor-fundo-medio);
+    border-radius: 10px;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+}
+  
+/* Efeito de zoom e sombra ao passar o mouse no card. */
+.projeto-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+  
+/* Container do conteúdo inicial do card (a imagem). */
+.primeiro-conteudo {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: all 0.4s ease;
+}
+  
+/* Garante que a imagem do projeto preencha o espaço do card. */
+.primeiro-conteudo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+/* Faz o conteúdo inicial desaparecer no hover. */
+.projeto-card:hover .primeiro-conteudo {
+    height: 0px;
+    opacity: 0;
+}
+  
+/* Container do conteúdo revelado no hover (textos e botão). */
+.segundo-conteudo {
+    height: 0%;
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: all 0.4s ease;
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+}
+
+/* Faz o conteúdo secundário aparecer no hover. */
+.projeto-card:hover .segundo-conteudo {
+    opacity: 1;
+    height: 100%;
+    transform: rotateX(0deg);
+}
+
+/* Estiliza o botão 'Ver Projeto'. */
+.segundo-conteudo a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 22px;
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo-escuro);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efeito visual ao passar o mouse no botão. */
+.segundo-conteudo a:hover {
+    background-color: var(--cor-texto);
+    transform: translateY(-2px);
+}
+
+/* Estiliza o formulário de contato com aparência de card. */
+#contato form {
+    background-color: var(--cor-fundo-medio);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px -15px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    margin: 40px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+/* Estilo para as etiquetas (labels) do formulário. */
+form label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+/* Estilo para os campos de entrada de texto do formulário. */
+form input, form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px dotted var(--cor-fundo-escuro);
+    background-color: var(--cor-fundo-medio);
+    color: var(--cor-texto);
+}
+
+/* Estilo para o botão de envio do formulário. */
+form button {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo-escuro);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Estilo da seção do rodapé da página. */
+.rodape {
+    grid-area: rodape;
+    background-color: var(--cor-fundo-medio);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

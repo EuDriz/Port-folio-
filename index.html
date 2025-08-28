@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Leonardo Araujo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <nav class="menu">
+            <ul>
+                <li><a href="#sobre">Sobre Mim</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+
+        <main class="principal">
+            
+            <section id="sobre">
+                <h2>Leonardo Araujo de Lima</h2>
+                <p>Olá! Meu nome é Leonardo Araujo de Lima e sou apaixonado por tecnologias. Moro em Fortaleza-ce <br> e nos meus tempos livres, gosto de Jogar video-game, ler quadrinhos e me informar sobre novas tecnologias.</p>
+            </section>
+
+            <section id="formacao">
+                <h2>Formações</h2>
+                <div class="formacao-container">
+                    <div class="formacao-item">
+                        <h3>Técnico em Automação Industrial</h3>
+                        <p><strong>Instituição:</strong> EEEP Juarez Távora</p>
+                        <p><strong>Período:</strong> 2019 - 2021</p>
+                    </div>
+                    <div class="formacao-item">
+                        <h3>Bacharelado em Engenharia de Software</h3>
+                        <p><strong>Instituição:</strong> Uninter</p>
+                        <p><strong>Período:</strong> 2025 - 2030 - cursando</p>
+                    </div>
+                    <div class="formacao-item">
+                        <h3>Idiomas</h3>
+                        <p><strong>Curso:</strong> Inglês</p>
+                        <p><strong>Nível: </strong> A1 - Basico</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="portfolio">
+                <h2>Meu Portfólio</h2>
+                <div class="portfolio-grid">
+                    <div class="projeto-card">
+                        <div class="primeiro-conteudo">
+                            <img src="img/Projeto-Pokedex.png" alt="Projeto-Pokedex">
+                        </div>
+                        <div class="segundo-conteudo">
+                            <h3>Projeto Pokedex</h3>
+                            <p>Site inspirada em uma Pokedex do anime Pokemon</p>
+                            <a href="https://codepen.io/Leonardo-Ara-jo-the-scripter/pen/zxvpeBr" target="_blank">Ver Projeto</a>
+                        </div>
+                    </div>
+                    <div class="projeto-card">
+                        <div class="primeiro-conteudo">
+                            <img src="img/Site-Tec.png" alt="Site sobre tecnologia">
+                        </div>
+                        <div class="segundo-conteudo">
+                            <h3>Projeto Tec</h3>
+                            <p>Site com objetivo de mostrar o mundo da tecnologia.</p>
+                            <a href="#" target="_blank">Ver Projeto</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contato">
+                <h2>Contato</h2>
+                <p>Preencha o formulário abaixo para entrar em contato.</p>
+                <form>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </section>
+
+        </main>
+
+        <footer class="rodape">
+            <p>&copy; 2025 - Leonardo Araujo de Lima.</p>
+        </footer>
+
+    </div>
+</body>
+</html>
