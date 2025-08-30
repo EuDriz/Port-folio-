@@ -26,7 +26,7 @@ body {
     color: var(--cor-texto);
 }
 
-/* Define a estrutura principal da página (menu, principal, rodapé) com Grid. */
+/* Define a estrutura principal da página (menu, principal, rodapé) do Grid. */
 .container { 
     display: grid; 
     grid-template-rows: 10vh auto 15vh; 
@@ -37,7 +37,7 @@ body {
     grid-gap: 5px; 
 }
 
-/* Estiliza a barra de navegação */
+/* Personalizando a barra de navegação */
 .menu {
     grid-area: menu;
     background-color: var(--cor-fundo-escuro);
@@ -72,7 +72,7 @@ body {
     transition: color 0.3s ease;
 }
 
-/* Efeito visual ao passar o mouse sobre um link do menu. */
+/* Efeito ao passar o mouse sobre um link do menu. */
 .menu ul li a:hover {
     color: var(--cor-texto);
     background-color: var(--cor-destaque);
@@ -136,7 +136,43 @@ section h2 {
     text-align: left;
     margin-top: 10px;
 }
+/* --- SEÇÃO DE HABILIDADES --- */
+.habilidades-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
 
+.item {
+    background-color: var(--cor-fundo-medio);
+    border-radius: 10px;
+    width: 130px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: transform 0.3s ease;
+}
+
+.item:hover {
+    transform: translateY(-8px);
+    background-color: var(--cor-destaque);
+}
+
+/* Estilo para o ícone (se usar SVG como imagem) */
+.item img {
+    width: 50px;
+    height: 50px;
+}
+
+.item p {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: var(--cor-texto);
+}
 /* Cria uma grade responsiva para os cards de projeto. */
 .portfolio-grid {
     display: grid;
